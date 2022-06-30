@@ -56,7 +56,6 @@ public abstract class ExternalLoginWithRoleProviderBase : IExternalLoginProvider
         if (externalUser.TwoFactorEnabled != null)
             (await UserManager.SetTwoFactorEnabledAsync(user, externalUser.TwoFactorEnabled.Value)).CheckErrors();
 
-        (await UserManager.AddDefaultRolesAsync(user)).CheckErrors();
         (await UserManager.AddLoginAsync(
                     user,
                     new UserLoginInfo(
