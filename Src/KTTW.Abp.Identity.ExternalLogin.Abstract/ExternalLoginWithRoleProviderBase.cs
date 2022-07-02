@@ -9,9 +9,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Volo.Abp.Domain.Repositories;
 using Volo.Abp.Guids;
+using Volo.Abp.Identity;
 using Volo.Abp.MultiTenancy;
 
-namespace Volo.Abp.Identity.ExternalLogin.Abstract;
+namespace KTTW.Abp.Identity.ExternalLogin.Abstract;
 
 public abstract class ExternalLoginWithRoleProviderBase : IExternalLoginProvider
 {

@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Options;
 using Volo.Abp.Guids;
+using Volo.Abp.Identity;
 using Volo.Abp.MultiTenancy;
 
-namespace Volo.Abp.Identity.ExternalLogin.Abstract.Tests.Fake
+namespace KTTW.Abp.Identity.ExternalLogin.Abstract.Tests.Fake
 {
     public class FakeExternalLoginWithRoleProviderBase : ExternalLoginWithRoleProviderBase
     {

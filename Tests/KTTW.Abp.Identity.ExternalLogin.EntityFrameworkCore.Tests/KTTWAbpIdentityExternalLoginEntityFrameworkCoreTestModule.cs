@@ -8,15 +8,15 @@ using Volo.Abp.Identity.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 
-namespace Volo.Abp.Identity.ExternalLogin.EntityFrameworkCore;
+namespace KTTW.Abp.Identity.ExternalLogin.EntityFrameworkCore;
 
 [DependsOn(
-    typeof(VoloAbpIdentityExternalLoginTestBaseModule),
+    typeof(KTTWAbpIdentityExternalLoginTestBaseModule),
     typeof(AbpPermissionManagementEntityFrameworkCoreModule),
     typeof(AbpIdentityEntityFrameworkCoreModule),
     typeof(AbpEntityFrameworkCoreSqliteModule)
     )]
-public class VoloAbpIdentityExternalLoginEntityFrameworkCoreTestModule : AbpModule
+public class KTTWAbpIdentityExternalLoginEntityFrameworkCoreTestModule : AbpModule
 {
     public override void ConfigureServices(ServiceConfigurationContext context)
     {

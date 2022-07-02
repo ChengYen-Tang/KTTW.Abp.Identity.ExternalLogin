@@ -1,8 +1,9 @@
 ﻿using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
+using Volo.Abp.Identity;
 
-namespace Volo.Abp.Identity.ExternalLogin.Abstract;
+namespace KTTW.Abp.Identity.ExternalLogin.Abstract;
 public class ExternalLoginUserWithRoleInfo : ExternalLoginUserInfo
 {
     [NotNull]

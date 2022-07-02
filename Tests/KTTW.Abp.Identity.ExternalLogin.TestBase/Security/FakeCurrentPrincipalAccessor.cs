@@ -2,7 +2,7 @@
 using Volo.Abp.DependencyInjection;
 using Volo.Abp.Security.Claims;
 
-namespace Volo.Abp.Identity.ExternalLogin.Security;
+namespace KTTW.Abp.Identity.ExternalLogin.Security;
 
 [Dependency(ReplaceServices = true)]
 public class FakeCurrentPrincipalAccessor : ThreadCurrentPrincipalAccessor

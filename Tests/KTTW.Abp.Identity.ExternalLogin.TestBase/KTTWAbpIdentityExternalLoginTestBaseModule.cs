@@ -2,19 +2,18 @@
 using Volo.Abp.Authorization;
 using Volo.Abp.Autofac;
 using Volo.Abp.BackgroundJobs;
-using Volo.Abp.Data;
 using Volo.Abp.IdentityServer;
 using Volo.Abp.Modularity;
 using Volo.Abp.Threading;
 
-namespace Volo.Abp.Identity.ExternalLogin;
+namespace KTTW.Abp.Identity.ExternalLogin;
 
 [DependsOn(
     typeof(AbpAutofacModule),
     typeof(AbpTestBaseModule),
     typeof(AbpAuthorizationModule)
     )]
-public class VoloAbpIdentityExternalLoginTestBaseModule : AbpModule
+public class KTTWAbpIdentityExternalLoginTestBaseModule : AbpModule
 {
     public override void PreConfigureServices(ServiceConfigurationContext context)
     {

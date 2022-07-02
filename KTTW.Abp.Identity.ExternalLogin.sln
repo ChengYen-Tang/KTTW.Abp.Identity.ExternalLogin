@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KTTW.Abp.Identity.ExternalLogin.Abstract", "Src\KTTW.Abp.Identity.ExternalLogin.Abstract\KTTW.Abp.Identity.ExternalLogin.Abstract.csproj", "{0C7BD621-21A0-46EF-BE5A-9ED16F79B6B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KTTW.Abp.Identity.ExternalLogin.TestBase", "Tests\KTTW.Abp.Identity.ExternalLogin.TestBase\KTTW.Abp.Identity.ExternalLogin.TestBase.csproj", "{CC8CEA1F-DEFE-49AC-B3FE-9B1BDF3071AE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{1DAEBB12-8857-4BE0-B4E0-6BE9FFF4128B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FBA677A9-ACA0-4559-B2F4-A15F8AD9E653}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KTTW.Abp.Identity.ExternalLogin.EntityFrameworkCore.Tests", "Tests\KTTW.Abp.Identity.ExternalLogin.EntityFrameworkCore.Tests\KTTW.Abp.Identity.ExternalLogin.EntityFrameworkCore.Tests.csproj", "{9B2B9D94-BC12-4413-A55E-012549056C07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KTTW.Abp.Identity.ExternalLogin.Abstract.Tests", "Tests\KTTW.Abp.Identity.ExternalLogin.Abstract.Tests\KTTW.Abp.Identity.ExternalLogin.Abstract.Tests.csproj", "{E816DE0F-EDFD-48FB-BE56-48456B4A50A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C7BD621-21A0-46EF-BE5A-9ED16F79B6B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C7BD621-21A0-46EF-BE5A-9ED16F79B6B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C7BD621-21A0-46EF-BE5A-9ED16F79B6B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C7BD621-21A0-46EF-BE5A-9ED16F79B6B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC8CEA1F-DEFE-49AC-B3FE-9B1BDF3071AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC8CEA1F-DEFE-49AC-B3FE-9B1BDF3071AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC8CEA1F-DEFE-49AC-B3FE-9B1BDF3071AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC8CEA1F-DEFE-49AC-B3FE-9B1BDF3071AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B2B9D94-BC12-4413-A55E-012549056C07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B2B9D94-BC12-4413-A55E-012549056C07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B2B9D94-BC12-4413-A55E-012549056C07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B2B9D94-BC12-4413-A55E-012549056C07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E816DE0F-EDFD-48FB-BE56-48456B4A50A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E816DE0F-EDFD-48FB-BE56-48456B4A50A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E816DE0F-EDFD-48FB-BE56-48456B4A50A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E816DE0F-EDFD-48FB-BE56-48456B4A50A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0C7BD621-21A0-46EF-BE5A-9ED16F79B6B4} = {1DAEBB12-8857-4BE0-B4E0-6BE9FFF4128B}
+		{CC8CEA1F-DEFE-49AC-B3FE-9B1BDF3071AE} = {FBA677A9-ACA0-4559-B2F4-A15F8AD9E653}
+		{9B2B9D94-BC12-4413-A55E-012549056C07} = {FBA677A9-ACA0-4559-B2F4-A15F8AD9E653}
+		{E816DE0F-EDFD-48FB-BE56-48456B4A50A9} = {FBA677A9-ACA0-4559-B2F4-A15F8AD9E653}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52AC6ACF-F5E0-4E00-B34E-0452D816CA85}
+	EndGlobalSection
+EndGlobal

@@ -3,11 +3,11 @@ using Volo.Abp.Modularity;
 using Volo.Abp.Uow;
 using Volo.Abp.Testing;
 
-namespace Volo.Abp.Identity.ExternalLogin;
+namespace KTTW.Abp.Identity.ExternalLogin;
 
 /* All test classes are derived from this class, directly or indirectly.
  */
-public abstract class VoloAbpIdentityExternalLoginTestBase<TStartupModule> : AbpIntegratedTest<TStartupModule>
+public abstract class KTTWAbpIdentityExternalLoginTestBase<TStartupModule> : AbpIntegratedTest<TStartupModule>
     where TStartupModule : IAbpModule
 {
     protected override void SetAbpApplicationCreationOptions(AbpApplicationCreationOptions options)

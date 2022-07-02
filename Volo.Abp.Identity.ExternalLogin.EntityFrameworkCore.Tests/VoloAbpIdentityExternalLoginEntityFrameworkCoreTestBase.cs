@@ -1,4 +1,0 @@
-﻿namespace Volo.Abp.Identity.ExternalLogin.EntityFrameworkCore;
-public abstract class VoloAbpIdentityExternalLoginEntityFrameworkCoreTestBase : VoloAbpIdentityExternalLoginTestBase<VoloAbpIdentityExternalLoginEntityFrameworkCoreTestModule>
-{
-}

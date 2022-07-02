@@ -1,12 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 using Volo.Abp.Domain.Repositories;
-using Volo.Abp.Identity.ExternalLogin.Abstract.Tests.Fake;
+using KTTW.Abp.Identity.ExternalLogin.Abstract.Tests.Fake;
 using Volo.Abp.Uow;
+using Volo.Abp.Identity;
 
-namespace Volo.Abp.Identity.ExternalLogin.Abstract.Tests.Tests
+namespace KTTW.Abp.Identity.ExternalLogin.Abstract.Tests.Tests
 {
     [TestClass]
-    public class ExternalLoginWithRoleProviderBaseTests : VoloAbpIdentityExternalLoginAbstractTestBase
+    public class ExternalLoginWithRoleProviderBaseTests : KTTWAbpIdentityExternalLoginAbstractTestBase
     {
         private readonly IIdentityUserRepository identityUserRepository;
         private readonly IIdentityRoleRepository identityRoleRepository;

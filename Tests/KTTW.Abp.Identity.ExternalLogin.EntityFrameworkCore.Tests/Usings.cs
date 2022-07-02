@@ -1,0 +1,1 @@
+global using KTTW.Abp.Identity.ExternalLogin;

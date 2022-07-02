@@ -1,0 +1,4 @@
+﻿namespace KTTW.Abp.Identity.ExternalLogin.EntityFrameworkCore;
+public abstract class KTTWAbpIdentityExternalLoginEntityFrameworkCoreTestBase : KTTWAbpIdentityExternalLoginTestBase<KTTWAbpIdentityExternalLoginEntityFrameworkCoreTestModule>
+{
+}
