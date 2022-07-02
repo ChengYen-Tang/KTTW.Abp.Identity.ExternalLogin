@@ -1,4 +1,10 @@
 steps:
+steps:
+- task: UseDotNet@2
+  displayName: 'Use .NET Core sdk'
+  inputs:
+    version: 6.x
+
 - task: DotNetCoreCLI@2
   displayName: Restore
   inputs:
