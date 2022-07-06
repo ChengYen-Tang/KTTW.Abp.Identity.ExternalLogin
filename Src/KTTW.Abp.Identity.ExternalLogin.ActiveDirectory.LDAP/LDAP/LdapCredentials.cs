@@ -2,7 +2,7 @@
 
 public class LdapCredentials
 {
-    public string DomainAdminName { get; set; }
+    public string AdminDN { get; set; }
 
     public string Password { get; set; }
 }

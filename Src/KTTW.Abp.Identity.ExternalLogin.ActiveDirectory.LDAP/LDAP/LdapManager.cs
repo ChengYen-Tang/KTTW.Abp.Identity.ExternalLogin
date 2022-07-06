@@ -23,14 +23,15 @@ namespace KTTW.Abp.Identity.ExternalLogin.ActiveDirectory.LDAP.LDAP
             {
                 using LdapConnection connection = new();
                 connection.Connect(ldapOptions.ServerHost, ldapOptions.ServerPort);
-                connection.Bind(ldapOptions.Credentials.DomainAdminName, ldapOptions.Credentials.Password);
+                connection.Bind(ldapOptions.Credentials.AdminDN, ldapOptions.Credentials.Password);
 
                 ILdapSearchResults entities = connection.Search(ldapOptions.SearchBase, LdapConnection.ScopeSub, $"(SAMAccountName={userName})", null, false);
                 LdapEntry entry = null;
+                LdapAttribute account = null;
                 while (entities.HasMore())
                 {
                     LdapEntry ldapEntry = entities.Next();
-                    LdapAttribute account = ldapEntry.GetAttributeSet().ContainsKey("SAMAccountName") ? ldapEntry.GetAttribute("SAMAccountName") : null;
+                    account = ldapEntry.GetAttributeSet().ContainsKey("SAMAccountName") ? ldapEntry.GetAttribute("SAMAccountName") : null;
                     if (account != null && account.StringValue == userName)
                     {
                         entry = ldapEntry;
@@ -59,7 +60,7 @@ namespace KTTW.Abp.Identity.ExternalLogin.ActiveDirectory.LDAP.LDAP
                     Name = givenName?.StringValue ?? string.Empty,
                     Surname = surName?.StringValue ?? string.Empty,
                     PhoneNumber = phone?.StringValue ?? string.Empty,
-                    ProviderKey = entry.Dn,
+                    ProviderKey = $"{entry.Dn}, {account.StringValue}",
                     EmailConfirmed = true,
                     PhoneNumberConfirmed = false,
                     TwoFactorEnabled = false,
@@ -78,9 +79,9 @@ namespace KTTW.Abp.Identity.ExternalLogin.ActiveDirectory.LDAP.LDAP
 
         public static string GetCN(string str)
         {
-            var start = str.IndexOf("cn=");
+            var start = str.ToLower().IndexOf("cn=");
             var end = str.IndexOf(",");
-            return str.Substring(start + 4, end - start - 3);
+            return str.Substring(start + 3, end - start - 3);
         }
     }
 }
