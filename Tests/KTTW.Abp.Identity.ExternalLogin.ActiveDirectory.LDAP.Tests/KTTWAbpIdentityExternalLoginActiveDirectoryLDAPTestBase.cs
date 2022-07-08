@@ -1,0 +1,4 @@
+﻿namespace KTTW.Abp.Identity.ExternalLogin.ActiveDirectory.LDAP.Tests;
+public class KTTWAbpIdentityExternalLoginActiveDirectoryLDAPTestBase : KTTWAbpIdentityExternalLoginTestBase<KTTWAbpIdentityExternalLoginActiveDirectoryLDAPTestModule>
+{
+}

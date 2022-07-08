@@ -11,9 +11,9 @@ namespace KTTW.Abp.Identity.ExternalLogin.Abstract.Tests.Tests
     {
         private readonly IIdentityUserRepository identityUserRepository;
         private readonly IIdentityRoleRepository identityRoleRepository;
+        private readonly IUnitOfWorkManager unitOfWorkManager;
         private readonly IdentityUserManager identityUserManager;
         private readonly FakeExternalLoginWithRoleProviderBase fakeExternalLoginWithRoleProviderBase;
-        private readonly IUnitOfWorkManager unitOfWorkManager;
         private ExternalLoginUserWithRoleInfo externalLoginUserWithRoleInfo;
 
         public ExternalLoginWithRoleProviderBaseTests()
@@ -26,18 +26,13 @@ namespace KTTW.Abp.Identity.ExternalLogin.Abstract.Tests.Tests
         }
 
         [TestInitialize]
-        public void Init()
+        public async Task Init()
         {
             externalLoginUserWithRoleInfo = new("test@github.com") { Name = "test", PhoneNumber = "123456789" };
-        }
-
-        [TestCleanup]
-        public async Task Clean()
-        {
             using IUnitOfWork uow = unitOfWorkManager.Begin();
-            Guid[] usersId = await (await identityUserRepository.GetDbSetAsync()).Select(item => item.Id).ToArrayAsync();
+            Guid[] usersId = await(await identityUserRepository.GetDbSetAsync()).Select(item => item.Id).ToArrayAsync();
             await identityUserRepository.DeleteManyAsync(usersId);
-            Guid[] roleId = await (await identityRoleRepository.GetDbSetAsync()).Select(item => item.Id).ToArrayAsync();
+            Guid[] roleId = await(await identityRoleRepository.GetDbSetAsync()).Select(item => item.Id).ToArrayAsync();
             await identityRoleRepository.DeleteManyAsync(roleId);
             await uow.CompleteAsync();
         }
@@ -124,7 +119,7 @@ namespace KTTW.Abp.Identity.ExternalLogin.Abstract.Tests.Tests
             string[] rolesName = (await identityUserManager.GetRolesAsync(user)).ToArray();
             CollectionAssert.AreEqual(externalLoginUserWithRoleInfo.Roles.ToArray(), rolesName);
 
-            Assert.AreEqual(3, await identityRoleRepository.GetCountAsync());
+            Assert.AreEqual(2, await identityRoleRepository.GetCountAsync());
             await uow.CompleteAsync();
         }
     }

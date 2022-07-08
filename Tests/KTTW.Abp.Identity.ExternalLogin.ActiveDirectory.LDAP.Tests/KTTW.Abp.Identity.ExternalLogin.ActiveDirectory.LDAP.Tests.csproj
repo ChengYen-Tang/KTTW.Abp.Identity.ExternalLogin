@@ -1,0 +1,51 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <IsPackable>false</IsPackable>
+	<IgnoreTest Condition="'$(IgnoreTest)' == 'true'">true</IgnoreTest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(IgnoreTest)'=='true'">
+	<DefineConstants>IgnoreTest</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Ductus.FluentDocker" Version="2.10.55" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.2.10" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.2.10" />
+    <PackageReference Include="coverlet.collector" Version="3.1.2" />
+    <PackageReference Include="PrivateObjectHelper" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Src\KTTW.Abp.Identity.ExternalLogin.ActiveDirectory.LDAP\KTTW.Abp.Identity.ExternalLogin.ActiveDirectory.LDAP.csproj" />
+    <ProjectReference Include="..\KTTW.Abp.Identity.ExternalLogin.EntityFrameworkCore.Tests\KTTW.Abp.Identity.ExternalLogin.EntityFrameworkCore.Tests.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ADConfig\usersNoSurname.ldif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ADConfig\usersNoPhoneNumber.ldif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ADConfig\usersNoEmail.ldif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ADConfig\usersNoRoles.ldif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ADConfig\usersNoName.ldif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="ADConfig\users.ldif">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -18,6 +18,8 @@ stages:
       vmImage: 'windows-latest'
     steps:
     - template: azure_templates/tests.yml
+    variables:
+      IgnoreTest: true
 
   - job: 'MacOS'
     displayName: 'Build and test project on MacOS platform'
@@ -25,6 +27,8 @@ stages:
       vmImage: 'macOS-latest'
     steps:
     - template: azure_templates/tests.yml
+    variables:
+      IgnoreTest: true
 
 - stage: IntelliCode
   displayName: 'Train intelliCode model'
