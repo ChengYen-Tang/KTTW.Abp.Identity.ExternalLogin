@@ -34,7 +34,7 @@ stages:
   displayName: 'Train intelliCode model'
   dependsOn:
     - Build_and_Test
-  condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/develop'))
+  condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/master'))
   jobs:
   - job: 'Training'
     displayName: 'Train intelliCode model'
