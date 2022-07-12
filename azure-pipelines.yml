@@ -30,6 +30,19 @@ stages:
     variables:
       IgnoreTest: true
 
+- stage: Publish
+  displayName: 'Pack and push to nuget'
+  dependsOn:
+    - Build_and_Test
+  condition: and(succeeded(), startsWith(variables['Build.SourceBranch'], 'refs/heads/release'))
+  jobs:
+  - job: 'Ubuntu'
+    displayName: 'Pack and push to nuget on Ubuntu platform'
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - template: azure_templates/release.yml
+
 - stage: IntelliCode
   displayName: 'Train intelliCode model'
   dependsOn:

@@ -1,0 +1,17 @@
+steps:
+- template: build.yml
+
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    command: 'pack'
+    projects: 'Src/**/*.csproj'
+    arguments: '--configuration $(buildConfiguration)'
+    outputDir: '$(Build.ArtifactStagingDirectory)/PackDir'
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'push'
+    nugetFeedType: 'external'
+    externalEndPoint: 'ExternalLogin'
+    searchPatternPush: '$(Build.ArtifactStagingDirectory)/PackDir/*.nupkg'
