@@ -2,16 +2,23 @@ steps:
 - template: build.yml
 
 - task: DotNetCoreCLI@2
-  displayName: Build
+  displayName: Pack
   inputs:
     command: 'pack'
     projects: 'Src/**/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
-    outputDir: '$(Build.ArtifactStagingDirectory)/PackDir'
+    outputDir: '$(Build.ArtifactStagingDirectory)/PackDir/'
 
-- task: DotNetCoreCLI@2
+- task: NuGetToolInstaller@1
+  displayName: 'Use NuGet '
   inputs:
-    command: 'push'
-    nugetFeedType: 'external'
-    externalEndPoint: 'ExternalLogin'
-    searchPatternPush: '$(Build.ArtifactStagingDirectory)/PackDir/*.nupkg'
+    checkLatest: true
+
+- task: NuGetCommand@2
+  displayName: 'NuGet push'
+  inputs:
+    command: push
+    packagesToPush: '$(Build.ArtifactStagingDirectory)/PackDir/*.nupkg'
+    nuGetFeedType: external
+    publishFeedCredentials: ExternalLogin
+
