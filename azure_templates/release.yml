@@ -5,7 +5,7 @@ steps:
   displayName: Pack
   inputs:
     command: 'pack'
-    projects: 'Src/**/*.csproj'
+    projects: 'Src/*/*.csproj'
     arguments: '--configuration $(buildConfiguration)'
     outputDir: '$(Build.ArtifactStagingDirectory)/PackDir/'
 
