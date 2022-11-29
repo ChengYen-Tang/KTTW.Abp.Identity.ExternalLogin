@@ -9,14 +9,14 @@
 	<Authors>Kenneth Tang</Authors>
 	<RepositoryType>git</RepositoryType>
 	<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-	<AssemblyVersion>5.3.2</AssemblyVersion>
-	<FileVersion>5.3.2</FileVersion>
+	<AssemblyVersion>6.0.1</AssemblyVersion>
+	<FileVersion>6.0.1</FileVersion>
 	<PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
-	<Version>5.3.2</Version>
+	<Version>6.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentResults" Version="3.8.0" />
+    <PackageReference Include="FluentResults" Version="3.15.1" />
     <PackageReference Include="Novell.Directory.Ldap.NETStandard" Version="3.6.0" />
   </ItemGroup>
 
